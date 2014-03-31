@@ -9,3 +9,13 @@ exports['create complex number'] = function (test) {
     test.equal(cnumber.imaginary(), 2);
 };
 
+exports['add two complex numbers'] = function (test) {
+    var cnumber1 = cx.create(1, 2);
+    var cnumber2 = cx.create(3, 4);
+    
+    var result = cnumber1.add(cnumber2);
+    
+    test.ok(result);
+    test.equal(result.real(), 4);
+    test.equal(result.imaginary(), 6);
+};
