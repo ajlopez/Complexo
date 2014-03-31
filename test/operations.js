@@ -19,3 +19,14 @@ exports['add two complex numbers'] = function (test) {
     test.equal(result.real(), 4);
     test.equal(result.imaginary(), 6);
 };
+
+exports['subtract two complex numbers'] = function (test) {
+    var cnumber1 = cx.create(1, 2);
+    var cnumber2 = cx.create(3, 7);
+    
+    var result = cnumber1.subtract(cnumber2);
+    
+    test.ok(result);
+    test.equal(result.real(), -2);
+    test.equal(result.imaginary(), -5);
+};
