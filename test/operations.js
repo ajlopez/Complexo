@@ -41,3 +41,12 @@ exports['multiply two complex numbers'] = function (test) {
     test.equal(result.real(), 2*3 - 3*7);
     test.equal(result.imag(), 3*3 + 2*7);
 };
+
+exports['abs value'] = function (test) {
+    var cnumber = cx.create(3, 4);
+    
+    var result = cnumber.abs();
+    
+    test.ok(result);
+    test.equal(result, 5);
+};
