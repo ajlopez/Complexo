@@ -18,7 +18,26 @@ Reference in your program:
 var cx = require('complexo');
 ```
 
-TBD
+Usage
+
+```js
+// create number 3 + 4i
+var cnumber = cx.create(3, 4);
+// toString
+cnumber.toString(); // "3 + 4i"
+// inverse
+cnumber.inv();
+// add to cnumber
+var newcnumber = cnumber.add(cnumber2);
+// subtract cnumber
+newcnumber = cnumber.sub(cnumber2);
+// multiply cnumber
+newcnumber = cnumber.mult(cnumber2);
+// divide cnumber
+newcnumber = cnumber.div(cnumber2);
+// conjugate
+newcnumber = cnumber.conj();
+```
 
 ## Development
 
@@ -28,6 +47,10 @@ cd Complexo
 npm install
 npm test
 ```
+
+## Versions
+
+- 0.0.1 Published
 
 ## Samples
 
