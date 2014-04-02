@@ -89,3 +89,20 @@ exports['inverse'] = function (test) {
     test.equal(result2.imag(), 0);
 };
 
+exports['divide'] = function (test) {
+    var cnumber = cx.create(3, 4);
+    
+    var result = cnumber.div(cnumber);
+    
+    test.ok(result);
+    test.equal(result.real(), 1);
+    test.equal(result.imag(), 0);
+    
+    var result2 = cnumber.div(cx.create(0, 1));
+    
+    test.ok(result2);
+    test.equal(result2.real(), 4);
+    test.equal(result2.imag(), -3);
+};
+
+
