@@ -50,3 +50,10 @@ exports['abs value'] = function (test) {
     test.ok(result);
     test.equal(result, 5);
 };
+
+exports['toString'] = function (test) {
+    test.equal(cx.create(3, 4).toString(), "3 + 4i");
+    test.equal(cx.create(0, 0).toString(), "0 + 0i");
+    test.equal(cx.create(1.2, 3.4).toString(), "1.2 + 3.4i");
+};
+
