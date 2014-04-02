@@ -73,3 +73,19 @@ exports['conjugate'] = function (test) {
     test.equal(result.imag(), 3);
 };
 
+exports['inverse'] = function (test) {
+    var cnumber = cx.create(3, 4);
+    
+    var result = cnumber.inv();
+    
+    test.ok(result);
+    test.equal(result.real(), 3 / 25);
+    test.equal(result.imag(), -4 / 25);
+    
+    var result2 = cnumber.mult(result);
+    
+    test.ok(result2);
+    test.equal(result2.real(), 1);
+    test.equal(result2.imag(), 0);
+};
+
