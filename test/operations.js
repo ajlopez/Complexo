@@ -57,3 +57,19 @@ exports['toString'] = function (test) {
     test.equal(cx.create(1.2, 3.4).toString(), "1.2 + 3.4i");
 };
 
+exports['conjugate'] = function (test) {
+    var cnumber = cx.create(2, 3);
+    
+    var result = cnumber.conj();
+    
+    test.ok(result);
+    test.equal(result.real(), 2);
+    test.equal(result.imag(), -3);
+    
+    result = result.conj();
+    
+    test.ok(result);
+    test.equal(result.real(), 2);
+    test.equal(result.imag(), 3);
+};
+
