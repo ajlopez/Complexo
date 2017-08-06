@@ -2,7 +2,7 @@
 var cx = require('..');
 
 exports['create complex number'] = function (test) {
-    var cnumber = cx.create(1, 2);
+    var cnumber = cx.complex(1, 2);
     
     test.ok(cnumber);
     test.equal(cnumber.real(), 1);
@@ -10,8 +10,8 @@ exports['create complex number'] = function (test) {
 };
 
 exports['add two complex numbers'] = function (test) {
-    var cnumber1 = cx.create(1, 2);
-    var cnumber2 = cx.create(3, 4);
+    var cnumber1 = cx.complex(1, 2);
+    var cnumber2 = cx.complex(3, 4);
     
     var result = cnumber1.add(cnumber2);
     
@@ -21,8 +21,8 @@ exports['add two complex numbers'] = function (test) {
 };
 
 exports['subtract two complex numbers'] = function (test) {
-    var cnumber1 = cx.create(1, 2);
-    var cnumber2 = cx.create(3, 7);
+    var cnumber1 = cx.complex(1, 2);
+    var cnumber2 = cx.complex(3, 7);
     
     var result = cnumber1.sub(cnumber2);
     
@@ -32,8 +32,8 @@ exports['subtract two complex numbers'] = function (test) {
 };
 
 exports['multiply two complex numbers'] = function (test) {
-    var cnumber1 = cx.create(2, 3);
-    var cnumber2 = cx.create(3, 7);
+    var cnumber1 = cx.complex(2, 3);
+    var cnumber2 = cx.complex(3, 7);
     
     var result = cnumber1.mult(cnumber2);
     
@@ -43,7 +43,7 @@ exports['multiply two complex numbers'] = function (test) {
 };
 
 exports['abs value'] = function (test) {
-    var cnumber = cx.create(3, 4);
+    var cnumber = cx.complex(3, 4);
     
     var result = cnumber.abs();
     
@@ -52,13 +52,13 @@ exports['abs value'] = function (test) {
 };
 
 exports['toString'] = function (test) {
-    test.equal(cx.create(3, 4).toString(), "3 + 4i");
-    test.equal(cx.create(0, 0).toString(), "0 + 0i");
-    test.equal(cx.create(1.2, 3.4).toString(), "1.2 + 3.4i");
+    test.equal(cx.complex(3, 4).toString(), "3 + 4i");
+    test.equal(cx.complex(0, 0).toString(), "0 + 0i");
+    test.equal(cx.complex(1.2, 3.4).toString(), "1.2 + 3.4i");
 };
 
 exports['conjugate'] = function (test) {
-    var cnumber = cx.create(2, 3);
+    var cnumber = cx.complex(2, 3);
     
     var result = cnumber.conj();
     
@@ -74,7 +74,7 @@ exports['conjugate'] = function (test) {
 };
 
 exports['inverse'] = function (test) {
-    var cnumber = cx.create(3, 4);
+    var cnumber = cx.complex(3, 4);
     
     var result = cnumber.inv();
     
@@ -90,7 +90,7 @@ exports['inverse'] = function (test) {
 };
 
 exports['divide'] = function (test) {
-    var cnumber = cx.create(3, 4);
+    var cnumber = cx.complex(3, 4);
     
     var result = cnumber.div(cnumber);
     
@@ -98,7 +98,7 @@ exports['divide'] = function (test) {
     test.equal(result.real(), 1);
     test.equal(result.imag(), 0);
     
-    var result2 = cnumber.div(cx.create(0, 1));
+    var result2 = cnumber.div(cx.complex(0, 1));
     
     test.ok(result2);
     test.equal(result2.real(), 4);

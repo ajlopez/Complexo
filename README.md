@@ -22,7 +22,7 @@ Usage
 
 ```js
 // create number 3 + 4i
-var cnumber = cx.create(3, 4);
+var cnumber = cx.complex(3, 4);
 // toString
 cnumber.toString(); // "3 + 4i"
 // inverse
