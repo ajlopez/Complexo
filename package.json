@@ -1,7 +1,7 @@
 { "name": "complexo"
 , "description": "Simple complex numbers arithmetic operations"
 , "keywords": [ "complex", "number", "arithmetic" ]
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
 , "repository": { "type": "git", "url": "git://github.com/ajlopez/Complexo.git" }
 , "main": "./lib/complexo.js"
