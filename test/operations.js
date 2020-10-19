@@ -1,8 +1,8 @@
 
-var cx = require('..');
+const cx = require('..');
 
 exports['create complex number'] = function (test) {
-    var cnumber = cx.complex(1, 2);
+    const cnumber = cx.complex(1, 2);
     
     test.ok(cnumber);
     test.equal(cnumber.real(), 1);
@@ -10,10 +10,10 @@ exports['create complex number'] = function (test) {
 };
 
 exports['add two complex numbers'] = function (test) {
-    var cnumber1 = cx.complex(1, 2);
-    var cnumber2 = cx.complex(3, 4);
+    const cnumber1 = cx.complex(1, 2);
+    const cnumber2 = cx.complex(3, 4);
     
-    var result = cnumber1.add(cnumber2);
+    const result = cnumber1.add(cnumber2);
     
     test.ok(result);
     test.equal(result.real(), 4);
@@ -21,10 +21,10 @@ exports['add two complex numbers'] = function (test) {
 };
 
 exports['subtract two complex numbers'] = function (test) {
-    var cnumber1 = cx.complex(1, 2);
-    var cnumber2 = cx.complex(3, 7);
+    const cnumber1 = cx.complex(1, 2);
+    const cnumber2 = cx.complex(3, 7);
     
-    var result = cnumber1.sub(cnumber2);
+    const result = cnumber1.sub(cnumber2);
     
     test.ok(result);
     test.equal(result.real(), -2);
@@ -32,10 +32,10 @@ exports['subtract two complex numbers'] = function (test) {
 };
 
 exports['multiply two complex numbers'] = function (test) {
-    var cnumber1 = cx.complex(2, 3);
-    var cnumber2 = cx.complex(3, 7);
+    const cnumber1 = cx.complex(2, 3);
+    const cnumber2 = cx.complex(3, 7);
     
-    var result = cnumber1.mult(cnumber2);
+    const result = cnumber1.mult(cnumber2);
     
     test.ok(result);
     test.equal(result.real(), 2*3 - 3*7);
@@ -43,9 +43,9 @@ exports['multiply two complex numbers'] = function (test) {
 };
 
 exports['abs value'] = function (test) {
-    var cnumber = cx.complex(3, 4);
+    const cnumber = cx.complex(3, 4);
     
-    var result = cnumber.abs();
+    const result = cnumber.abs();
     
     test.ok(result);
     test.equal(result, 5);
@@ -58,31 +58,31 @@ exports['toString'] = function (test) {
 };
 
 exports['conjugate'] = function (test) {
-    var cnumber = cx.complex(2, 3);
+    const cnumber = cx.complex(2, 3);
     
-    var result = cnumber.conj();
+    const result = cnumber.conj();
     
     test.ok(result);
     test.equal(result.real(), 2);
     test.equal(result.imag(), -3);
     
-    result = result.conj();
+    const result2 = result.conj();
     
-    test.ok(result);
-    test.equal(result.real(), 2);
-    test.equal(result.imag(), 3);
+    test.ok(result2);
+    test.equal(result2.real(), 2);
+    test.equal(result2.imag(), 3);
 };
 
 exports['inverse'] = function (test) {
-    var cnumber = cx.complex(3, 4);
+    const cnumber = cx.complex(3, 4);
     
-    var result = cnumber.inv();
+    const result = cnumber.inv();
     
     test.ok(result);
     test.equal(result.real(), 3 / 25);
     test.equal(result.imag(), -4 / 25);
     
-    var result2 = cnumber.mult(result);
+    const result2 = cnumber.mult(result);
     
     test.ok(result2);
     test.equal(result2.real(), 1);
@@ -90,15 +90,15 @@ exports['inverse'] = function (test) {
 };
 
 exports['divide'] = function (test) {
-    var cnumber = cx.complex(3, 4);
+    const cnumber = cx.complex(3, 4);
     
-    var result = cnumber.div(cnumber);
+    const result = cnumber.div(cnumber);
     
     test.ok(result);
     test.equal(result.real(), 1);
     test.equal(result.imag(), 0);
     
-    var result2 = cnumber.div(cx.complex(0, 1));
+    const result2 = cnumber.div(cx.complex(0, 1));
     
     test.ok(result2);
     test.equal(result2.real(), 4);
