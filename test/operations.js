@@ -20,6 +20,17 @@ exports['add two complex numbers'] = function (test) {
     test.equal(result.imag(), 6);
 };
 
+exports['add complex number to real number'] = function (test) {
+    const cnumber1 = cx.complex(1, 2);
+    const rnumber2 = 3;
+    
+    const result = cnumber1.add(rnumber2);
+    
+    test.ok(result);
+    test.equal(result.real(), 4);
+    test.equal(result.imag(), 2);
+};
+
 exports['subtract two complex numbers'] = function (test) {
     const cnumber1 = cx.complex(1, 2);
     const cnumber2 = cx.complex(3, 7);
