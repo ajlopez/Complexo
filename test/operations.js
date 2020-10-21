@@ -42,6 +42,17 @@ exports['subtract two complex numbers'] = function (test) {
     test.equal(result.imag(), -5);
 };
 
+exports['subtract real number from complex number'] = function (test) {
+    const cnumber1 = cx.complex(1, 2);
+    const rnumber2 = 3;
+    
+    const result = cnumber1.sub(rnumber2);
+    
+    test.ok(result);
+    test.equal(result.real(), -2);
+    test.equal(result.imag(), 2);
+};
+
 exports['multiply two complex numbers'] = function (test) {
     const cnumber1 = cx.complex(2, 3);
     const cnumber2 = cx.complex(3, 7);
