@@ -64,6 +64,17 @@ exports['multiply two complex numbers'] = function (test) {
     test.equal(result.imag(), 3*3 + 2*7);
 };
 
+exports['multiply complex number by real number'] = function (test) {
+    const cnumber1 = cx.complex(2, 3);
+    const rnumber2 = 3;
+    
+    const result = cnumber1.mult(rnumber2);
+    
+    test.ok(result);
+    test.equal(result.real(), 2*3);
+    test.equal(result.imag(), 3*3);
+};
+
 exports['abs value'] = function (test) {
     const cnumber = cx.complex(3, 4);
     
