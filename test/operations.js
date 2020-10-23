@@ -138,4 +138,13 @@ exports['divide'] = function (test) {
     test.equal(result2.imag(), -3);
 };
 
+exports['divide by real'] = function (test) {
+    const cnumber = cx.complex(3, 4);
+    
+    const result = cnumber.div(2);
+    
+    test.ok(result);
+    test.equal(result.real(), 1.5);
+    test.equal(result.imag(), 2);
+};
 
