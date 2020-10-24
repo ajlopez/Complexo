@@ -21,3 +21,10 @@ exports['i'] = function (test) {
     test.equal(i.real(), 0);
     test.equal(i.imag(), 1);
 };
+
+exports['-i'] = function (test) {
+    var minusi = cx.MINUSI;
+    
+    test.equal(minusi.real(), 0);
+    test.equal(minusi.imag(), -1);
+};
